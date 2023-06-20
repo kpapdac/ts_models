@@ -8,7 +8,7 @@ from pyro.contrib.forecast import ForecastingModel, Forecaster, eval_crps
 from pyro.infer.reparam import LocScaleReparam, SymmetricStableReparam
 from pyro.ops.tensor_utils import periodic_repeat
 
-class linearModel(ForecastingModel):
+class linearBayesian(ForecastingModel):
     # We then implement the .model() method. Since this is a generative model, it shouldn't
     # look at data; however it is convenient to see the shape of data we're supposed to
     # generate, so this inputs a zeros_like(data) tensor instead of the actual data.

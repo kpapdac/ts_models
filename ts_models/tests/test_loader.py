@@ -10,7 +10,8 @@ class test_loader(unittest.TestCase):
     def test_read(self):
         rate_load = loader.ratesLoader(self.flat_file)
         self.loc, self.freq, self.year, self.value = rate_load.read_data()
-        self.df = pd.DataFrame(np.concatenate([self.loc, self.freq, self.year, self.value], axis=1), columns = ['loc','freq','year','value'])
+        self.df = pd.DataFrame(np.concatenate([self.loc, self.freq, self.year, self.value], axis=1), \
+            columns = ['loc','freq','year','value'])
         self.df.value = self.df.value.astype(float)
         self.assertEqual(self.df.shape[1],4)
         self.assertLess(self.df.value.min(),self.df.value.max())
